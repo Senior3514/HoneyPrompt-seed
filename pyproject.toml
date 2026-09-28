@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "honeyprompts"
+version = "0.1.0"
+description = "Synthetic context decoys, kill-switch, and HMAC-SHA256 execution receipts for AI agent calls."
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["honeypot", "llm", "agents", "security"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/Senior3514/HoneyPrompt"
+Repository = "https://github.com/Senior3514/HoneyPrompt"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["honeyprompts*"]
+
+[tool.setuptools.package-data]
+honeyprompts = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
